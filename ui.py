@@ -48,6 +48,8 @@ class Textbox(pygame.sprite.Sprite):
         self.image = pygame.Surface(size)
         self.rect = self.image.get_rect()
         self.image.fill(background_color)
+        self.time = 5 
+        self.clock = 0
         
     def set_text(self):
         font = pygame.font.Font(pygame.font.get_default_font())
@@ -55,3 +57,9 @@ class Textbox(pygame.sprite.Sprite):
         textimage = font.render(self.text, True, self.color)
         textrect = textimage.get_rect()
         self.image.blit(textimage, textrect)
+
+    def update(self, frametime):
+        self.clock += frametime
+
+        if self.clock >= self.time:
+            self.kill()

@@ -37,7 +37,7 @@ class Char(pygame.sprite.Sprite):
                 target.health -= damage
 #this is the funcshon fro magic attacks
     def magic_damage(self, target):
-        if target.block == true:
+        if target.block == True:
             target.block = False
             pass
         else:

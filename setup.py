@@ -2,6 +2,7 @@ import pygame
 import ui
 def setup_buttons():
     
+    #setting text, color, length, height of all buttons
     attackbutton = ui.Button("Attack", (200,0,0), 300, 70)
     attackbutton.rect.y = 260
     attackbutton.set_text()
@@ -19,10 +20,12 @@ def setup_buttons():
     listofbuttons = [attackbutton, defendbutton, backpackbutton, magicbutton]
     return listofbuttons
 
+# make buttons disappear
 def disappearbuttons(buttons):
     for b in buttons:
         b.visible = False
 
+#make buttons appear
 def appearbuttons(buttons):
     for b in buttons:
         b.visible = True

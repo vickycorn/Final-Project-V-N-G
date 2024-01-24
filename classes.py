@@ -57,6 +57,9 @@ class Char(pygame.sprite.Sprite):
             elif i.itype == 1:
                 i.mana(self)
                 self.items.remove(i)
+#this is to heal
+    def use_backpack(self):
+        self.health += 25
 #this checs for what items you have
     def check_itams(self):
         return self.items

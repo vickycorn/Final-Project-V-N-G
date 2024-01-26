@@ -17,9 +17,12 @@ listofchars2 = [e1, e2, e3, e1]
 #loop over list of caricters and see when they will go
 def decide_turn_order(characters: list[classes.Char]):
     charspeeddic = {}
+    for i in characters:
+        charspeeddic.update({i.speed:i})
     for char in characters:
-        charspeeddic.update((char, char.speed))
-        keys = list(charspeeddic.key())
+        charspeeddic = dict(sorted(charspeeddic.items(), reverse=True))
+        #csorted = dict(sorted(choices.items(), reverse=True))
+        keys = list(charspeeddic.keys())
         keys.sort(reverse=True)
         charsortid = {i: charspeeddic[i] for i in keys}
         return charsortid

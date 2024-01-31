@@ -1,4 +1,6 @@
 import pygame
+import battlechoice
+
 class Button(pygame.sprite.Sprite):
     def __init__(self, text, color, width, height):
         pygame.sprite.Sprite.__init__(self)
@@ -20,10 +22,24 @@ class Button(pygame.sprite.Sprite):
             #ADD A COLOUR HERE LATER DON"T FORGET!!!
             #self.image.fill()
             if pygame.mouse.get_pressed()[0]:
-                #print(f'This player has chosen to {self.text}')
+                print(f'This player has chosen to {self.text}')
                 self.clicked = True
+                #different behavior for each button
+                if self.text == "Attack":
+                    print("Attack!")
+                    battlechoice.choice = "attack"
+                if self.text == "Defend":
+                    print("Defend!")
+                    battlechoice.choice = "defend"
+                if self.text == "Backpack":
+                    print("Open backpack")
+                    battlechoice.choice = "backpack"
+                if self.text == "Magic":
+                    print("OoOooOoo magic")
+                    battlechoice.choice = "magic"
             else:
                 self.clicked = False
+
 
 
     def set_text(self):

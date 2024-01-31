@@ -16,8 +16,8 @@ framecount = 0
 #game setup
 listofbuttons = setup.setup_buttons()
 
-testing_textbox = ui.Textbox("Somebody died, let's party!", (0,0,0), (123, 92, 0), (600,35), (12), (0, 210),time = 5000)
-testing_character = classes.Char("bam", 10, 10, 10, 10, 10)
+testing_textbox = ui.Textbox("If you're reading this you're weird please go away :)", (0,0,0), (123, 92, 0), (600,35), (12), (0, 210), time = 5000)
+testing_character = classes.Char("Bam", 10, 10, 10, 10, 10)
 testing_character.rect.x = 30
 testing_character.rect.y = 30
 testingcharacterbox = ui.Textbox("Bam", (255, 0, 0), (123, 92, 0), (600, 16), 12, (0, 0), time = 0, target = testing_character, centered = False)

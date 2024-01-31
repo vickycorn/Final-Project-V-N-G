@@ -9,19 +9,31 @@ c3 = classes.Char("c",10,1,1,1,32)
 c4 = classes.Char("d",10,1,1,1,16)
 listofchars1 = [c1, c2, c3, c4]
 
-e1 = classes.Char("a",10,1,1,1,1)
-e2 = classes.Char("b",10,1,1,1,1)
-e3 = classes.Char("c",10,1,1,1,1)
-e4 = classes.Char("d",10,1,1,1,1)
+e1 = classes.Char("e",10,1,1,1,1)
+e2 = classes.Char("f",10,1,1,1,1)
+e3 = classes.Char("g",10,1,1,1,1)
+e4 = classes.Char("h",10,1,1,1,1)
 listofchars2 = [e1, e2, e3, e1]
 #loop over list of caricters and see when they will go
 def decide_turn_order(characters: list[classes.Char]):
     charspeeddic = {}
+    for i in characters:
+        charspeeddic.update({i.speed:i})
+        #print(charspeeddic)
     for char in characters:
-        charspeeddic.update((char, char.speed))
-        keys = list(charspeeddic.key())
+        charspeeddic = dict(sorted(charspeeddic.items(), reverse=True))
+        #print(charspeeddic)
+        #csorted = dict(sorted(choices.items(), reverse=True))
+        keys = list(charspeeddic.keys())
+        #print(keys)
         keys.sort(reverse=True)
+        #print(keys)
         charsortid = {i: charspeeddic[i] for i in keys}
+        # print("a")
+        # print(charspeeddic)
+        # print("b")
+        # print(charsortid)
+        # print("a")
         return charsortid
     # speed_list =[]
     # character_list =[]
@@ -48,4 +60,4 @@ def turn_sumery(somthing):
 #loop over character instnces
     #for every character check what they choose
     #work with vicky to use ui system and get choice
-decide_turn_order(listofchars1)
+print(decide_turn_order(listofchars1))

@@ -1,5 +1,7 @@
 import pygame
 import ui
+import classes
+
 def setup_buttons():
     
     #setting text, color, length, height of all buttons
@@ -19,6 +21,23 @@ def setup_buttons():
     magicbutton.set_text()
     listofbuttons = [attackbutton, defendbutton, backpackbutton, magicbutton]
     return listofbuttons
+
+def setup_chars():
+    c1 = classes.Char("a",10,1,1,1,0)
+    c2 = classes.Char("b",10,1,1,1,9)
+    c1.rect.move_ip((30,30))
+    c2.rect.move_ip((30,80))
+
+    listofchars1 = [c1, c2]
+
+    e1 = classes.Char("e",10,1,1,1,1)
+    e2 = classes.Char("f",10,1,1,1,1)
+    e1.rect.move_ip((450,30))
+    e2.rect.move_ip((450,80))
+
+    listofchars2 = [e1, e2]
+
+    return (listofchars1, listofchars2)
 
 # make buttons disappear
 def disappearbuttons(buttons):

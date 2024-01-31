@@ -1,1 +1,1 @@
-choice = "attack"
+choice = ""

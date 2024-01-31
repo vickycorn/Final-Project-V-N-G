@@ -27,16 +27,16 @@ class Button(pygame.sprite.Sprite):
                 #different behavior for each button
                 if self.text == "Attack":
                     print("Attack!")
-                    battlechoice.choice = "Attack"
+                    battlechoice.choice = "attack"
                 if self.text == "Defend":
                     print("Defend!")
-                    battlechoice.choice = "Defend"
+                    battlechoice.choice = "defend"
                 if self.text == "Backpack":
                     print("Open backpack")
-                    battlechoice.choice = "Backpack"
+                    battlechoice.choice = "backpack"
                 if self.text == "Magic":
                     print("OoOooOoo magic")
-                    battlechoice.choice = "Magic"
+                    battlechoice.choice = "magic"
             else:
                 self.clicked = False
 

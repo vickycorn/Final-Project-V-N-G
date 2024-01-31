@@ -18,13 +18,19 @@ class Char(pygame.sprite.Sprite):
         self.image = pygame.Surface((100, 80))
         self.rect = self.image.get_rect()
         self.target = None 
-        self.shape = "hart"
+        self.count = 0
+        self.time = 4
+        self.slash = False 
+        self.shape = 1
 
-        f1 = pygame.image.load("Untitled.png")
-        f2 = pygame.image.load("Untitled.png")
-        f3 = pygame.image.load("Untitled.png")
-        f4 = pygame.image.load("Untitled.png")
-        self.frams = [f1, f2, f3, f4]
+        f1 = pygame.image.load("images/person/B_person_1.png")
+        f2 = pygame.image.load("images/person/B_person_2.png")
+        f3 = pygame.image.load("images/person/B_person_3.png")
+        f4 = pygame.image.load("images/person/B_person_4.png")
+        f5 = pygame.image.load("images/person/B_person_5.png")
+        f6 = pygame.image.load("images/person/B_person_6.png")
+
+        self.frams = [f1, f2, f3, f4, f5, f6]
         self.count = 0
 #this is how we will deal dameg and it will skip the dameg if the charicter bloscks
     def deal_damage(self, target):
@@ -63,7 +69,19 @@ class Char(pygame.sprite.Sprite):
 #this checs for what items you have
     def check_itams(self):
         return self.items
-
+   #makes charater move
+    def animate(self, framtime):
+        if self.slash:
+            self.image = self.frams[int((self.count % 60/self.time) %3) + 3 + self.shape *6]
+        else:
+            self.image = self.frams[int((self.count % 60/self.time) %3)]
+        #fix size and rotation
+        self.image = pygame.transform.rotate(self.image, 90)
+        self.image = pygame.transform.scale(self.image, (50,100))
+        self.count = self.count + 1
+    def update(self, framtime):
+        self.animate(framtime )
+    
 #this is the itame class
 class Item():
     #heal is how much the pochin heals and mana is how muxh mana is addid

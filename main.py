@@ -24,7 +24,15 @@ testingcharacterbox = ui.Textbox("Bam", (255, 0, 0), (123, 92, 0), (600, 16), 12
 buttongroup = pygame.sprite.Group(listofbuttons)
 buttongroup.add(testing_textbox)
 
-charactergroup = pygame.sprite.Group((testing_character, testingcharacterbox))
+char2 = classes.Char("bam", 10, 10, 10, 10, 10)
+char2.rect.x = 50
+char2.rect.y = 70 
+
+charactergroup = pygame.sprite.Group((testing_character, testingcharacterbox, char2))
+background = pygame.image.load ("images/backgrond.jpg")
+#fix size and rotation
+background = pygame.transform.rotate(background, 90)
+background = pygame.transform.scale(background, (600,300))
 
 while running:
     framecount += 1
@@ -40,6 +48,7 @@ while running:
     testing_character.rect.y = 30 + math.sin(framecount/20)*15
     testingcharacterbox.text = "bam" + str(30 + math.sin(framecount/20)*15)
     testingcharacterbox.set_text()
+    screen.blit(background, background.get_rect())
 
     # RENDER YOUR GAME HERE
     buttongroup.update(frametime)

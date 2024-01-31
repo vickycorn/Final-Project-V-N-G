@@ -51,26 +51,15 @@ def decide_turn_order(characters: list[classes.Char]):
 #interface with viky s mnues to get a choice
 def get_character_choice(character: classes.Char):
     if battlechoice.choice == "attack":
-        for i in listofchars1:
             i.deal_damage
-        for i in listofchars2:
-            i.deal_damage
-    if battlechoice.choice == "magic":
-        for i in listofchars1:
+    elif battlechoice.choice == "magic":
             i.magic_damage
-        for i in listofchars2:
-            i.magic_damage
-    if battlechoice.choice == "defnd":
-        for i in listofchars1:
+    elif battlechoice.choice == "defnd":
             i.block
-        for i in listofchars2:
-            i.block
-    if battlechoice.choice == "backpack":
+    elif battlechoice.choice == "backpack":
         for i in listofchars1:
             i.heal
-        for i in listofchars2:
-            i.heal
-#run charicter funckshon for turn
+    #run charicter funckshon for turn
 def exeute_turn(character):
     pass
 #ses wha hapend

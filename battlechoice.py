@@ -1,1 +1,2 @@
 choice = "attack"
+#hello Nico

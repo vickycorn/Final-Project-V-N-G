@@ -22,6 +22,7 @@ def setup_buttons():
     listofbuttons = [attackbutton, defendbutton, backpackbutton, magicbutton]
     return listofbuttons
 
+#kidane's code
 def setup_chars():
     c1 = classes.Char("a",10,1,1,1,0)
     c2 = classes.Char("b",10,1,1,1,9)

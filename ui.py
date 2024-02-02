@@ -1,6 +1,7 @@
 import pygame
 import battlechoice
 
+#set variables for text, color, width, height
 class Button(pygame.sprite.Sprite):
     def __init__(self, text, color, width, height):
         pygame.sprite.Sprite.__init__(self)
@@ -8,19 +9,21 @@ class Button(pygame.sprite.Sprite):
         self.color = color
         self.width = width
         self.height = height
+
+#set booleans for clicked, visible, and target
         self.clicked = False
         self.visible = True
         self.target = False
 
+#ensures that the textboxs get filled with a chosen color
         self.image = pygame.Surface((width, height))
         self.image.fill(color)
         self.rect = self.image.get_rect()
 
+#Makes buttons print the action the player has chosen to take when clicked
     def update(self, frametime):
         pos = pygame.mouse.get_pos()
         if self.rect.collidepoint(pos): 
-            #ADD A COLOUR HERE LATER DON"T FORGET!!!
-            #self.image.fill()
             if pygame.mouse.get_pressed()[0]:
                 print(f'This player has chosen to {self.text}')
                 self.clicked = True
@@ -41,7 +44,7 @@ class Button(pygame.sprite.Sprite):
                 self.clicked = False
 
 
-
+#sets 
     def set_text(self):
         font = pygame.font.Font(pygame.font.get_default_font())
         textimage = font.render(self.text, True, (255,255,255))
